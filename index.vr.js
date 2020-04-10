@@ -13,9 +13,25 @@ class Row extends Component {
 }
 
 export default class Basics extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      flexDirectionIsRow: true
+    }
+
+    setInterval(() => {
+      this.setState({flexDirectionIsRow: !this.state.flexDirectionIsRow})
+    }, 5000);
+  }
+
+
+
   render() {
+    let flexDirection = this.state.flexDirectionIsRow ? 'row' : 'column';
+
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, {flexDirection: flexDirection}]}>
         <Pano source={asset('starry-sky.jpg')}></Pano>
         <Row color='red' />
         <Row color='blue' />
@@ -38,7 +54,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: 2,
-    flexDirection: 'row',
+    alignItems: 'center',
     transform: [{translate: [-1, 0, -3]}]
   }
 })
