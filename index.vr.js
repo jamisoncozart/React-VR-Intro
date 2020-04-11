@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { AppRegistry, asset, Pano, View, Text, 
-  Cylinder, Box, Sphere } from 'react-vr';
+  Cylinder, Box, Sphere, Plane } from 'react-vr';
 
 export default class Basics extends Component {
   render() {
@@ -49,6 +49,17 @@ export default class Basics extends Component {
             transform: [
               {translate: [1, 0, -3]},
               {rotateY: 45}
+            ]
+          }}
+        />
+        <Plane 
+          dimHeight={5}
+          dimWidth={5}
+          texture={'http://i.imgur.com/3FAR9Kf.jpg'}
+          style={{
+            transform: [
+              {translate: [0, -1, -0.5]},
+              {rotateX: -90}
             ]
           }}
         />
