@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { AppRegistry, asset, Pano, View, Text, 
-  Cylinder, Box } from 'react-vr';
+  Cylinder, Box, Sphere } from 'react-vr';
 
 export default class Basics extends Component {
   render() {
@@ -36,6 +36,19 @@ export default class Basics extends Component {
               {translate: [0, 0.5, -3]},
               {rotateY: 45},
               {rotateZ: 45}
+            ]
+          }}
+        />
+        <Sphere 
+          radius={0.5}
+          widthSegments={10}
+          heightSegments={10}
+          texture={'http://i.imgur.com/bEBqA.jpg'}
+          style={{
+            color: '#aad',
+            transform: [
+              {translate: [1, 0, -3]},
+              {rotateY: 45}
             ]
           }}
         />
